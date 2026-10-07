@@ -1,0 +1,3 @@
+import "dotenv/config";
+const required=n=>{const v=process.env[n];if(!v)throw new Error(`Missing ${n}`);return v};
+export const config={port:Number(process.env.PORT||3000),verifyToken:required("WHATSAPP_VERIFY_TOKEN"),accessToken:required("WHATSAPP_ACCESS_TOKEN"),phoneNumberId:required("WHATSAPP_PHONE_NUMBER_ID"),graphVersion:process.env.META_GRAPH_VERSION||"v23.0",geminiApiKey:required("GEMINI_API_KEY"),geminiModel:process.env.GEMINI_MODEL||"gemini-3.8-flash",storeName:process.env.STORE_NAME||"Kardivo",currency:process.env.CURRENCY||"EGP",maxDiscountPercent:Number(process.env.MAX_DISCOUNT_PERCENT||10),ownerDiscordWebhookUrl:process.env.OWNER_DISCORD_WEBHOOK_URL||""};
